@@ -253,6 +253,9 @@ body.dark-mode .services .card.hidden-service { display: none; } /* This should 
 .work .tech-stack { margin-bottom: 20px; display: flex; gap: 15px; align-items: center; }
 .work .tech-stack i { font-size: 1.8em; color: var(--text-muted); transition: transform 0.3s ease, color 0.3s ease; }
 .work .tech-stack i:hover { transform: scale(1.2); }
+.work .tech-stack .supabase-icon { display: inline-flex; align-items: center; font-size: 1.8em; transition: transform 0.3s ease; }
+.work .tech-stack .supabase-icon:hover { transform: scale(1.2); }
+.work .tech-stack .supabase-icon svg { width: 1.2em; height: 1.2em; }
 .work .tech-stack .devicon-html5-plain { color: #e45126; }
 .work .tech-stack .devicon-css3-plain { color: #0c73b8; }
 .work .tech-stack .devicon-javascript-plain { color: #e3a324; }
