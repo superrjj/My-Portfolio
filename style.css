@@ -43,6 +43,26 @@ body.dark-mode { /* Renamed from body.dark-mode for clarity */
     --shadow: var(--dm-shadow);
 }
 
+/* Work section - make cards stretch full height */
+.work .content {
+    align-items: stretch;
+}
+
+.work .card {
+    display: flex;
+    flex-direction: column;
+}
+
+.work .card .card-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.work .card .card-info p {
+    flex: 1; /* pushes tech-stack and link to bottom */
+}
+
 section { padding: 100px; }
 .title { width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column; }
 .section-title { position: relative; color: var(--primary-color); font-size: 2.2em; font-weight: 800; margin-bottom: 60px; text-align: center; }
