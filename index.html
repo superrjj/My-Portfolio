@@ -15,6 +15,33 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+    <style>
+        /* Fix: equal-height work cards with tech + link pinned to bottom */
+        .work .content .card {
+            display: flex;
+            flex-direction: column;
+        }
+        .work .content .card .card-info {
+            padding: 20px;
+        }
+        .work .content .card .card-info {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .work .content .card .card-info p {
+            flex: 1;
+        }
+        .work .content .card .card-info .tech-stack {
+            margin-top: auto;
+            padding-top: 12px;
+        }
+        .work .content .card .card-info .project-link {
+            margin-top: 10px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
 
@@ -47,8 +74,8 @@
                 <p class="main-subtitle">I design and build complete digital experiences, creating functional and user-friendly web applications from scratch.</p>
                 <a href="#work" class="btn">My Work</a>
                 <div class="media-icons">
-                    <a href="https://www.facebook.com/h4rv.eeee/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/h4rv.eee/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/superj.aki/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ur_cyclist_harvee/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
                     <a href="https://github.com/superrjj" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
                     <a href="mailto:prdo.vender.swu@phinmaed.com" target="_blank" rel="noopener noreferrer" aria-label="Send Email"><i class="fas fa-envelope"></i></a>
                 </div>
@@ -77,7 +104,7 @@
             </div>
             <div class="column col-right">
                 <h2 class="content-title" data-aos="fade-left" data-aos-duration="1000">Hey There! I'm John Harvee Quirido</h2>
-                <p class="paragraph-text" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">I’m a cyclist and a BSIT student at STI College Tarlac who’s passionate about building creative and functional digital solutions. I specialize in Java, React.js, C#, Python, and React Native, and I love working with tools like Firebase, TensorFlow, GitHub, and MSSQL to bring ideas to life.</p>
+                <p class="paragraph-text" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">I'm a cyclist and a BSIT student at STI College Tarlac who's passionate about building creative and functional digital solutions. I specialize in Java, React.js, C#, Python, and React Native, and I love working with tools like Firebase, TensorFlow, GitHub, and MSSQL to bring ideas to life.</p>
                 <a href="Image/myresume.pdf" download class="btn" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">Download CV</a>
             </div>
         </div>
@@ -89,10 +116,23 @@
         </div>
         <div class="content">
             <div class="timeline">
-                
+
                 <div class="timeline-item" data-aos="fade-up" data-aos-duration="1000">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2026 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Project</h3>
+                        <p class="company">City of Tarlac Government – IT Division Office</p>
+                        <p>
+                        Developed an <b>IT Helpdesk Ticketing System</b> for the City of Tarlac Government IT Division Office, streamlining the submission, tracking, and resolution of internal IT support requests.
+                        Built using <b>React.js</b> with <b>TypeScript</b> and <b>CSS</b>, integrated with <b>Supabase</b> for real-time backend services and database management.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2026</div>
                     <div class="timeline-content">
                         <h3>Freelance</h3>
                             <p class="company">Tarlac State University</p>
@@ -123,7 +163,7 @@
                        <h3>Local Codefest Competition – 1st Place</h3>
                         <p class="company">STI College Tarlac</p>
                         <p>
-                        Participated in our school’s annual <b>Codefest competition</b> and won <b>1st place</b> for developing an innovative Android app designed for calorie tracking and health monitoring. 
+                        Participated in our school's annual <b>Codefest competition</b> and won <b>1st place</b> for developing an innovative Android app designed for calorie tracking and health monitoring. 
                         I contributed to the front-end interface to ensure a smooth and functional user experience.
                         </p>
                     </div>
@@ -173,7 +213,6 @@
                 </div>
             </div>
         </div>
-
         <div class="content">
             <div class="education-card" data-aos="fade-up" data-aos-duration="1000">
                 <div class="edu-header">
@@ -188,7 +227,6 @@
                 </div>
             </div>
         </div>
-
     </section>
 
     <section class="certificates" id="certificates">
@@ -197,36 +235,28 @@
         </div>
         <div class="content">
             <div class="certificate-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                <div class="certificate-img">
-                    <img src="Image/certificate-1.png" alt="Certificate 1">
-                </div>
+                <div class="certificate-img"><img src="Image/certificate-1.png" alt="Certificate 1"></div>
                 <div class="certificate-info">
                     <h3>DroidDash: From Zero to Hero!</h3>
                     <a href="Image/certificate-1.png" target="_blank" rel="noopener noreferrer" class="certificate-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
             <div class="certificate-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                <div class="certificate-img">
-                    <img src="Image/certificate-2.png" alt="Certificate 2">
-                </div>
+                <div class="certificate-img"><img src="Image/certificate-2.png" alt="Certificate 2"></div>
                 <div class="certificate-info">
                     <h3>1st Place Local Codefest Competition</h3>
                     <a href="Image/certificate-2.png" target="_blank" rel="noopener noreferrer" class="certificate-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
             <div class="certificate-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                <div class="certificate-img">
-                    <img src="Image/certificate-3.png" alt="Certificate 3">
-                </div>
+                <div class="certificate-img"><img src="Image/certificate-3.png" alt="Certificate 3"></div>
                 <div class="certificate-info">
                     <h3>Fundamental of Python Programming</h3>
                     <a href="Image/certificate-3.png" target="_blank" rel="noopener noreferrer" class="certificate-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
             <div class="certificate-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-                <div class="certificate-img">
-                    <img src="Image/certificate-4.png" alt="Certificate 4">
-                </div>
+                <div class="certificate-img"><img src="Image/certificate-4.png" alt="Certificate 4"></div>
                 <div class="certificate-info">
                     <h3>Querying Fundamental with MySQL Essentials</h3>
                     <a href="Image/certificate-4.png" target="_blank" rel="noopener noreferrer" class="certificate-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
@@ -248,7 +278,7 @@
                     <div class="backend-icons">
                         <i class="devicon-visualstudio-plain" title="VS Code"></i>
                         <i class="devicon-git-plain" title="Git"></i>
-                       <i class="devicon-tensorflow-original colored" title="TensorFlow"></i>
+                        <i class="devicon-tensorflow-original colored" title="TensorFlow"></i>
                         <i class="devicon-firebase-plain" title="Firebase"></i>
                         <span class="supabase-icon-backend" title="Supabase">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -330,63 +360,85 @@
         </div>
     </section>
 
-   <section class="work" id="work">
-    <div class="title">
-        <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">My Work</h2>
-    </div>
-    <div class="content">
-        <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-            <div class="card-img"><img src="Image/palayannn.png" alt="PalaYan Project"></div>
-            <div class="card-info">
-                <h3>PalaYan - Palay Management System</h3>
-                <p>A modern, responsive landing page for the Department of Agriculture - Tarlac, built with a focus on clean UI and smooth animations.</p>
-                <div class="tech-stack">
-                    <i class="devicon-react-original" title="ReactJS"></i>
-                    <i class="devicon-tailwindcss-plain" title="Tailwind CSS"></i>
-                    <i class="devicon-javascript-plain" title="JavaScript"></i>
-                    <i class="devicon-firebase-plain" title="Firebase"></i>
-                </div>
-                <a href="https://palayan-admin-department-of-agriculture-tarlac.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View PalaYan Project">View Project <i class="fas fa-external-link-alt"></i></a>
-            </div>
+    <section class="work" id="work">
+        <div class="title">
+            <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">My Work</h2>
         </div>
-        <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-            <div class="card-img"><img src="Image/project-2.png" alt="D&R Reptilez Project"></div>
-            <div class="card-info">
-                <h3>D&R Margin Racing</h3>
-                <p>D&R Margin Racing is a premier amateur cycling team based in Tarlac and Pangasinan, dedicated to youth development and competitive racing.</p>
-                <div class="tech-stack">
-                    <i class="devicon-react-original" title="ReactJS"></i>
-                    <span class="supabase-icon" title="Supabase">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21.362 9.354H12V.396a.396.396 0 0 0-.716-.233L2.203 12.424l-.401.562a1.04 1.04 0 0 0 .836 1.659H12v8.959a.396.396 0 0 0 .716.233l9.081-12.261.401-.562a1.04 1.04 0 0 0-.836-1.66z" fill="#3ECF8E"/>
-                        </svg>
-                    </span>
-                    <i class="devicon-tailwindcss-plain" title="Tailwind CSS"></i>
-                </div>
-                <a href="https://reptilezcyclingclub.com/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View D&R Reptilez Project">View Project <i class="fas fa-external-link-alt"></i></a>
-            </div>
-        </div>
+        <!-- ALL 4 cards inside ONE .content div so the grid applies to all -->
+        <div class="content">
 
- <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-            <div class="card-img"><img src="Image/project-3.jpg" alt="D&R Reptilez Project"></div>
-            <div class="card-info">
-                <h3>Smart Farming Irrigation Management System for String Beans in Dalayap, Tarlac</h3>
-                <p>IoT-based irrigation monitoring and control system for farms in Dalayap, Tarlac with web dashboard and mobile application.</p>
-                <div class="tech-stack">
-                    <i class="devicon-react-original" title="ReactJS"></i>
-                    <span class="supabase-icon" title="Supabase">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21.362 9.354H12V.396a.396.396 0 0 0-.716-.233L2.203 12.424l-.401.562a1.04 1.04 0 0 0 .836 1.659H12v8.959a.396.396 0 0 0 .716.233l9.081-12.261.401-.562a1.04 1.04 0 0 0-.836-1.66z" fill="#3ECF8E"/>
-                        </svg>
-                    </span>
-                    <i class="devicon-typescript-plain" title="TypeScript"></i>
+            <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="card-img"><img src="Image/palayannn.png" alt="PalaYan Project"></div>
+                <div class="card-info">
+                    <h3>PalaYan - Palay Management System</h3>
+                    <p>A modern, responsive landing page for the Department of Agriculture - Tarlac, built with a focus on clean UI and smooth animations.</p>
+                    <div class="tech-stack">
+                        <i class="devicon-react-original" title="ReactJS"></i>
+                        <i class="devicon-tailwindcss-plain" title="Tailwind CSS"></i>
+                        <i class="devicon-javascript-plain" title="JavaScript"></i>
+                        <i class="devicon-firebase-plain" title="Firebase"></i>
+                    </div>
+                    <a href="https://palayan-admin-department-of-agriculture-tarlac.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View PalaYan Project">View Project <i class="fas fa-external-link-alt"></i></a>
                 </div>
-                <a href="https://github.com/superrjj/Smart-Farming-Irrigation-Management-System-For-String-Beans" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View D&R Reptilez Project">View Project <i class="fas fa-external-link-alt"></i></a>
             </div>
-        </div>
 
-    </div>
-</section>
+            <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <div class="card-img"><img src="Image/project-2.png" alt="D&R Reptilez Project"></div>
+                <div class="card-info">
+                    <h3>D&R Reptilez Sports</h3>
+                    <p>D&R Reptilez Sports is a premier amateur cycling team based in Tarlac and Pangasinan, dedicated to youth development and competitive racing.</p>
+                    <div class="tech-stack">
+                        <i class="devicon-react-original" title="ReactJS"></i>
+                        <span class="supabase-icon" title="Supabase">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21.362 9.354H12V.396a.396.396 0 0 0-.716-.233L2.203 12.424l-.401.562a1.04 1.04 0 0 0 .836 1.659H12v8.959a.396.396 0 0 0 .716.233l9.081-12.261.401-.562a1.04 1.04 0 0 0-.836-1.66z" fill="#3ECF8E"/>
+                            </svg>
+                        </span>
+                        <i class="devicon-tailwindcss-plain" title="Tailwind CSS"></i>
+                    </div>
+                    <a href="https://reptilezcyclingclub.com/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View D&R Reptilez Project">View Project <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                <div class="card-img"><img src="Image/project-3.jpg" alt="Smart Farming Project"></div>
+                <div class="card-info">
+                    <h3>Smart Farming Irrigation Management System for String Beans in Dalayap, Tarlac</h3>
+                    <p>A smart farming system with automated irrigation and real-time IoT sensor monitoring, built for farmers in Dalayap, Tarlac City.</p>
+                    <div class="tech-stack">
+                        <i class="devicon-react-original" title="ReactJS"></i>
+                        <span class="supabase-icon" title="Supabase">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21.362 9.354H12V.396a.396.396 0 0 0-.716-.233L2.203 12.424l-.401.562a1.04 1.04 0 0 0 .836 1.659H12v8.959a.396.396 0 0 0 .716.233l9.081-12.261.401-.562a1.04 1.04 0 0 0-.836-1.66z" fill="#3ECF8E"/>
+                            </svg>
+                        </span>
+                        <i class="devicon-tailwindcss-plain" title="Tailwind CSS"></i>
+                    </div>
+                    <a href="https://github.com/superrjj/Smart-Farming-Irrigation-Management-System-For-String-Beans" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Smart Farming Project">View Project <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+                <div class="card-img"><img src="Image/project-4.png" alt="IT Helpdesk Ticketing System"></div>
+                <div class="card-info">
+                    <h3>IT Helpdesk Ticketing System</h3>
+                    <p>A comprehensive helpdesk ticketing system developed for the City of Tarlac Government IT Division Office, enabling efficient tracking and resolution of IT support requests.</p>
+                    <div class="tech-stack">
+                        <i class="devicon-react-original" title="ReactJS"></i>
+                        <i class="devicon-typescript-plain" title="TypeScript"></i>
+                        <span class="supabase-icon" title="Supabase">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21.362 9.354H12V.396a.396.396 0 0 0-.716-.233L2.203 12.424l-.401.562a1.04 1.04 0 0 0 .836 1.659H12v8.959a.396.396 0 0 0 .716.233l9.081-12.261.401-.562a1.04 1.04 0 0 0-.836-1.66z" fill="#3ECF8E"/>
+                            </svg>
+                        </span>
+                        <i class="devicon-css3-plain" title="CSS"></i>
+                    </div>
+                    <a href="https://github.com/superrjj/IT-Helpdesk-Ticketing-System" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View IT Helpdesk Ticketing System">View Project <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <section class="contact" id="contact">
         <div class="title"><h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">Contact Me</h2></div>
@@ -409,7 +461,7 @@
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <div class="contact-text"><span>Address</span><p><a href="https://www.google.com/maps/place/Tarlac+City,+Tarlac/@15.4844621,120.5195818,12z/data=!3m1!4b1!4m6!3m5!1s0x3396c63f4ab68e0d:0x13f9415d7a5bfd4b!8m2!3d15.4880848!4d120.5871946!16zL20vMDZxMHRr!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Tarlac City, Tarlac,  Philippines</a></p></div>
+                        <div class="contact-text"><span>Address</span><p><a href="https://www.google.com/maps/place/Tarlac+City,+Tarlac/@15.4844621,120.5195818,12z/data=!3m1!4b1!4m6!3m5!1s0x3396c63f4ab68e0d:0x13f9415d7a5bfd4b!8m2!3d15.4880848!4d120.5871946!16zL20vMDZxMHRr!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Tarlac City, Tarlac, Philippines</a></p></div>
                     </div>
                 </div>
             </div>
