@@ -62,7 +62,7 @@
         <!-- Dark Mode Toggle -->
         <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
             <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
-        </div>
+        </button>
     </header>
 
     <section class="main" id="main">
@@ -74,8 +74,8 @@
                 <p class="main-subtitle">I design and build complete digital experiences, creating functional and user-friendly web applications from scratch.</p>
                 <a href="#work" class="btn">My Work</a>
                 <div class="media-icons">
-                    <a href="https://www.facebook.com/superj.aki/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/ur_cyclist_harvee/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/h4rv.eeee/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/h4rv.eee/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
                     <a href="https://github.com/superrjj" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
                     <a href="mailto:prdo.vender.swu@phinmaed.com" target="_blank" rel="noopener noreferrer" aria-label="Send Email"><i class="fas fa-envelope"></i></a>
                 </div>
@@ -364,7 +364,6 @@
         <div class="title">
             <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">My Work</h2>
         </div>
-        <!-- ALL 4 cards inside ONE .content div so the grid applies to all -->
         <div class="content">
 
             <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
@@ -466,7 +465,8 @@
                 </div>
             </div>
             <div class="contact-right" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                <form class="contact-form" action="https://formspree.io/f/xanplgoo" method="POST">
+                <!-- ✅ Added id="contact-form" for JS targeting -->
+                <form class="contact-form" id="contact-form" action="https://formspree.io/f/xanplgoo" method="POST">
                     <div class="form-row"><div class="input-box"><label for="name">Your Name</label><input type="text" id="name" name="Name" required></div><div class="input-box"><label for="email">Your Email</label><input type="email" id="email" name="Email" required></div></div>
                     <div class="input-box"><label for="subject">Subject</label><input type="text" id="subject" name="Subject"></div>
                     <div class="input-box"><label for="message">Your Message</label><textarea id="message" name="Message" rows="5" required></textarea></div>
@@ -479,11 +479,12 @@
     <footer class="footer">
         <span class="footer-title">John Harvee Quirido</span>
         <div class="footer-social-media">
-            <a href="https://www.facebook.com/superj.aki/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/ur_cyclist_harvee/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@ughharvee" target="_blank" rel="noopener noreferrer" aria-label="Tiktok Profile"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/h4rv.eeee/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/h4rv.eee/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@h4rv.eee" target="_blank" rel="noopener noreferrer" aria-label="Tiktok Profile"><i class="fab fa-tiktok"></i></a>
         </div>
-        <p>Copyright &copy;2025. All Rights Reserved.</p>
+        <!-- <span id="footer-year"> filled by JS — always current year -->
+        <p>Copyright &copy;<span id="footer-year"></span>. All Rights Reserved.</p>
     </footer>
     
     <div class="chatbot-toggler"><span class="icon-open"><i class="fas fa-comment-alt"></i></span><span class="icon-close"><i class="fas fa-times"></i></span></div>
@@ -497,5 +498,22 @@
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.1.0/tsparticles.bundle.min.js"></script>
     <script src="script.js" defer></script>
+
+    <script>
+        // Auto-clear all contact form fields after submission
+        // The 100ms delay lets the browser finish capturing form data before reset fires
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function () {
+                setTimeout(() => this.reset(), 100);
+            });
+        }
+
+        // Auto-increment footer year — no more manual updates needed
+        const footerYear = document.getElementById('footer-year');
+        if (footerYear) {
+            footerYear.textContent = new Date().getFullYear();
+        }
+    </script>
 </body>
 </html>
