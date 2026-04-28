@@ -267,16 +267,16 @@ body.dark-mode .services .card.hidden-service { display: none; } /* This should 
 .work { background: var(--background-dark); } /* Use background-dark for this section */
 .work .section-title { color: var(--text-light); } /* Title remains light */
 .work .section-title::before, .work .section-title::after { background: var(--text-light); } /* Underline remains light */
-.work .content { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; }
-.work .card { width: 360px; background: var(--text-light); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s ease; }
+.work .content { display: flex; justify-content: center; align-items: stretch; flex-wrap: wrap; gap: 30px; }
+.work .card { width: 360px; min-height: 520px; background: var(--text-light); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s ease; display: flex; flex-direction: column; }
 .work .card:hover { transform: translateY(-10px); }
 .work .card .card-img { width: 100%; height: 220px; overflow: hidden; }
 .work .card .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
 .work .card:hover .card-img img { transform: scale(1.1); }
-.work .card-info { padding: 20px; }
-.work .card-info h3 { font-size: 1.4em; font-weight: 700; color: var(--secondary-color); }
-.work .card-info p { color: var(--text-muted); margin: 10px 0 15px; }
-.work .tech-stack { margin-bottom: 20px; display: flex; gap: 15px; align-items: center; }
+.work .card-info { padding: 20px; display: flex; flex-direction: column; flex: 1; }
+.work .card-info h3 { font-size: 1.4em; font-weight: 700; color: var(--secondary-color); min-height: 68px; }
+.work .card-info p { color: var(--text-muted); margin: 10px 0 15px; flex: 1; }
+.work .tech-stack { margin-top: auto; margin-bottom: 20px; display: flex; gap: 15px; align-items: center; }
 .work .tech-stack i { font-size: 1.8em; color: var(--text-muted); transition: transform 0.3s ease, color 0.3s ease; }
 .work .tech-stack i:hover { transform: scale(1.2); }
 .work .tech-stack .supabase-icon { display: inline-flex; align-items: center; font-size: 1.8em; transition: transform 0.3s ease; }
