@@ -256,6 +256,25 @@ if (seeMoreBtn && hiddenServices.length > 0) {
     });
 }
 
+// --- Work Section: Category Filters ---
+const filterBtns = document.querySelectorAll('.work-filters .filter-btn');
+const filterableItems = document.querySelectorAll('.featured-project, .work-card');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        filterableItems.forEach(item => {
+            const categories = (item.dataset.category || '').split(' ');
+            const show = filter === 'all' || categories.includes(filter);
+            item.style.display = show ? '' : 'none';
+        });
+    });
+});
+
 // --- tsParticles Initialization ---
 // Apply dark mode preference before initializing tsParticles to get correct initial colors
 applyThemePreference();
