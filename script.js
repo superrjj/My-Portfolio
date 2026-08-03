@@ -35,6 +35,7 @@ const header = document.querySelector("header");
 const menuBtn = document.querySelector(".menu-btn");
 const navigation = document.querySelector(".navigation");
 const navigationItems = document.querySelectorAll(".navigation a");
+const navBackdrop = document.querySelector(".nav-backdrop");
 
 window.addEventListener("scroll", function () {
     if (header) {
@@ -42,19 +43,64 @@ window.addEventListener("scroll", function () {
     }
 });
 
+function openMobileMenu() {
+    if (menuBtn) menuBtn.classList.add("active");
+    if (navigation) navigation.classList.add("active");
+    if (navBackdrop) navBackdrop.classList.add("active");
+}
+
+function closeMobileMenu() {
+    if (menuBtn) menuBtn.classList.remove("active");
+    if (navigation) navigation.classList.remove("active");
+    if (navBackdrop) navBackdrop.classList.remove("active");
+}
+
+function toggleMobileMenu() {
+    if (navigation && navigation.classList.contains("active")) {
+        closeMobileMenu();
+    } else {
+        openMobileMenu();
+    }
+}
+
 if (menuBtn && navigation) {
-    menuBtn.addEventListener("click", () => {
-        menuBtn.classList.toggle("active");
-        navigation.classList.toggle("active");
+    menuBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleMobileMenu();
     });
 }
 
+// Close the card menu when tapping the dimmed backdrop
+if (navBackdrop) {
+    navBackdrop.addEventListener("click", closeMobileMenu);
+}
+
+// Close on Escape key
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMobileMenu();
+});
+
+// Close if the user clicks/taps anywhere outside the menu card or button
+document.addEventListener("click", (e) => {
+    if (!navigation || !navigation.classList.contains("active")) return;
+    const clickedInsideNav = navigation.contains(e.target);
+    const clickedMenuBtn = menuBtn && menuBtn.contains(e.target);
+    if (!clickedInsideNav && !clickedMenuBtn) {
+        closeMobileMenu();
+    }
+});
+
+// Close the menu automatically if the viewport grows back into desktop size
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 1040) {
+        closeMobileMenu();
+    }
+});
+
+// Close after selecting a link
 navigationItems.forEach((navItem) => {
     navItem.addEventListener("click", () => {
-        if (menuBtn && navigation) {
-            menuBtn.classList.remove("active");
-            navigation.classList.remove("active");
-        }
+        closeMobileMenu();
     });
 });
 
